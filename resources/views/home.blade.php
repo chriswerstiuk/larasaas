@@ -1,23 +1,35 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-	<div class="container">
-	    <div class="row justify-content-center">
-	        <div class="col-md-8">
-	            <div class="card">
-	                <div class="card-header">Dashboard</div>
+	<div class="h-2 bg-indigo-dark"></div>
+	<div class="container mx-auto px-8 py-4">
+		<nav class="flex justify-between items-center py-2 px-4 border-b border-grey-light">
+			<div class="mr-6">
+				<a href="{{ url('/') }}" class="text-2xl font-bold text-indigo hover:text-indigo-dark no-underline">
+					{{ config('app.name', 'Laravel') }}
+				</a>
+			</div>
 
-	                <div class="card-body">
-	                    @if (session('status'))
-	                        <div class="alert alert-success" role="alert">
-	                            {{ session('status') }}
-	                        </div>
-	                    @endif
+			<div>
+				<ul class="list-reset flex">
+					@auth
+						<li>
+							<a href="{{ url('/dashboard') }}" class="text-base no-underline text-grey-darker hover:text-grey-darkest">Dashboard</a>
+						</li>
+					@else
+						<li class="mr-4">
+							<a href="{{ route('login') }}" class="text-base no-underline text-grey-darker hover:text-grey-darkest">Login</a>
+						</li>
+						<li>
+							<a href="{{ route('register') }}" class="text-base no-underline text-grey-darker hover:text-grey-darkest">Register</a>
+						</li>
+					@endauth
+				</ul>
+			</div>
+		</nav>
 
-	                    You are logged in!
-	                </div>
-	            </div>
-	        </div>
-	    </div>
+		<div class="min-h-screen flex items-center justify-center -my-24">
+			<h1 class="text-2xl sm:text-5xl text-indigo font-sans">Laravel Saas Boilerplate.</h1>
+		</div>
 	</div>
 @endsection

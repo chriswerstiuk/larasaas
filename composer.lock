@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "609b80c49430d9de8a5e8f29c9e8c9d6",
+    "content-hash": "1f1677303d69675e2318afa1e2657189",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -5157,6 +5157,55 @@
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
             "homepage": "https://github.com/sebastianbergmann/version",
             "time": "2016-10-03T07:35:21+00:00"
+        },
+        {
+            "name": "shuvroroy/laravel-preset",
+            "version": "3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shuvroroy/laravel-preset.git",
+                "reference": "dd4534ffc53426ac75b3c189120b95fa94502672"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shuvroroy/laravel-preset/zipball/dd4534ffc53426ac75b3c189120b95fa94502672",
+                "reference": "dd4534ffc53426ac75b3c189120b95fa94502672",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ShuvroRoy\\LaravelPreset\\PresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ShuvroRoy\\LaravelPreset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shuvro Roy",
+                    "email": "shuvro.nsu.cse@gmail.com"
+                }
+            ],
+            "description": "Shuvro Roy's Laravel Frontend Preset",
+            "keywords": [
+                "laravel",
+                "laravel-preset",
+                "laravel-preset-tailwindcss",
+                "tailwindcss"
+            ],
+            "time": "2018-10-31T20:20:07+00:00"
         },
         {
             "name": "symfony/filesystem",
