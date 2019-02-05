@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="h-2 bg-indigo"></div>
-    <div class="container mx-auto px-8 py-4">
+    <div class="container mx-auto px-4 md:px-8 py-4">
     	@include('layouts.partials._nav')
 
         <div class="mx-auto max-w-md mt-16">

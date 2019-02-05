@@ -15,5 +15,19 @@ Route::get('/', 'HomeController@index')->name('home');
 Auth::routes(['verify' => true]);
 
 Route::middleware('verified')->group(function () {
-    Route::view('dashboard', 'dashboard');
+	// Dashboard
+    Route::get('/dashboard', 'DashboardController@index');
+
+    Route::prefix('account')->namespace('Account')->name('account.')->group(function () {
+    	// Account
+    	Route::get('/', 'AccountController@index')->name('index');
+
+    	// Account Profile
+    	Route::get('/profile', 'ProfileController@index')->name('profile.index');
+    	Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
+
+    	// Account Password
+    	Route::get('/password', 'PasswordController@index')->name('password.index');
+    	Route::patch('/password/{user}', 'PasswordController@update')->name('password.update');
+    });
 });

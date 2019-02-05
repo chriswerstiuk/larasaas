@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="h-2 bg-indigo"></div>
-    <div class="container mx-auto px-8 py-4">
+    <div class="container mx-auto px-4 md:px-8 py-4">
     	@include('layouts.partials._nav')
 
         <div class="mx-auto max-w-md mt-16">
@@ -20,8 +20,7 @@
                                 {{ __('Name') }}
                             </label>
 
-                            <input type="text"
-                            name="name" id="name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded border-grey-lighter focus:outline-none focus:border-indigo-dark py-3 px-4 mb-3" placeholder="John Doe" value="{{ old('name') }}" required autofocus>
+                            <input type="text" name="name" id="name" class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded border-grey-lighter focus:outline-none focus:border-indigo-dark py-3 px-4 mb-3" placeholder="John Doe" value="{{ old('name') }}" required autofocus>
 
                             @if ($errors->has('name'))
                                 <div class="mt-2" role="alert">
@@ -46,6 +45,7 @@
                             @endif
                         </div>
                     </div>
+
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label for="password" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2">
