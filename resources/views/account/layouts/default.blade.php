@@ -1,19 +1,5 @@
-@extends('layouts.master')
+@extends('layouts.default')
 
-@section('content')
-	<div class="h-2 bg-indigo-dark"></div>
-	<div class="container mx-auto px-4 md:px-8 py-4">
-		@include('layouts.partials._nav')
-
-		<div class="mt-16">
-			<div class="flex -mx-4">
-				<div class="w-1/4 px-4">
-					@include('account.layouts.partials._nav')
-				</div>
-				<div class="w-3/4 px-4">
-					@yield('account.content')
-				</div>
-			</div>
-		</div>
-	</div>
+@section('default.content')
+	@yield('account.content')
 @endsection

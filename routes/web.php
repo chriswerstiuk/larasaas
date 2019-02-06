@@ -16,7 +16,7 @@ Auth::routes(['verify' => true]);
 
 Route::middleware('verified')->group(function () {
 	// Dashboard
-    Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
 
     Route::prefix('account')->namespace('Account')->name('account.')->group(function () {
     	// Account
@@ -29,5 +29,9 @@ Route::middleware('verified')->group(function () {
     	// Account Password
     	Route::get('/password', 'PasswordController@index')->name('password.index');
     	Route::patch('/password/{user}', 'PasswordController@update')->name('password.update');
+
+    	// Account Deactivate
+    	Route::get('/deactivate', 'DeactivateController@index')->name('deactivate.index');
+    	Route::patch('/deactivate/{user}', 'DeactivateController@update')->name('deactivate.update');
     });
 });
