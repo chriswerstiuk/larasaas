@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Account;
+namespace App\Http\Requests\TwoFactor;
 
-use App\Rules\CurrentPassword;
 use Illuminate\Foundation\Http\FormRequest;
 
-class PasswordUpdateRequest extends FormRequest
+class TwoFactorStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +24,8 @@ class PasswordUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'password_current' => ['required', new CurrentPassword],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'phone' => ['required'],
+            'dial_code' => ['required', 'exists:countries,dial_code'],
         ];
     }
 }

@@ -3,7 +3,7 @@
 @section('account.content')
 	<div class="bg-white rounded shadow">
 		<div class="border-b border-grey-lighter py-8 font-bold text-grey-darkest text-center text-xl tracking-wide uppercase">
-			{{ __('Update Profile') }}
+			{{ __('Change Password') }}
 		</div>
 
 		<form class="px-8 py-8" method="POST" action="{{ route('account.password.update', auth()->id()) }}">

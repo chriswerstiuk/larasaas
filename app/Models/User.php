@@ -28,4 +28,38 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the two factor record associated with the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function twoFactor()
+    {
+        return $this->hasOne(TwoFactor::class);
+    }
+
+    /**
+     * Check the two factor is pending verification for the user.
+     *
+     * @return boolean
+     */
+    public function twoFactorPendingVerification()
+    {
+        if (!$this->twoFactor) {
+            return false;
+        }
+
+        return !$this->twoFactor->isVerified();
+    }
+
+    /**
+     * Check the two factor is enabled for the user.
+     *
+     * @return boolean
+     */
+    public function twoFactorEnabled()
+    {
+        return (bool) optional($this->twoFactor)->isVerified();
+    }
 }
