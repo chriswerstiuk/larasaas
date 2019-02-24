@@ -47,7 +47,7 @@ class TwoFactor extends Model
     }
 
     /**
-     * Check the two factor record is verified or not.
+     * Check the two factor record is verified.
      *
      * @return boolean
      */

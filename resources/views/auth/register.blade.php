@@ -70,6 +70,22 @@
                         </div>
                     </div>
 
+                    <div class="mb-8">
+                        <div class="md:flex md:items-center mb-6">
+                            <label class="md:w-2/3 block text-grey font-bold cursor-pointer">
+                                <input type="checkbox" name="terms" class="mr-2 leading-tight">
+                                <span class="uppercase tracking-wide text-grey-darker text-xs font-bold">
+                                    I accept the <a href="#" target="_blank" class="text-indigo no-underline hover:underline">terms of service</a>
+                                </span>
+                            </label>
+                            @if ($errors->has('terms'))
+                                <div class="mt-2" role="alert">
+                                    <p class="text-red text-xs font-semibold tracking-wide">{{ $errors->first('terms') }}</p>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
                             <button type="submit" class="rounded bg-indigo hover:bg-indigo-dark w-full p-4 text-sm text-white uppercase font-bold tracking-wide focus:outline-none">

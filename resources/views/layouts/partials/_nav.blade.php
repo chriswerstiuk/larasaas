@@ -8,6 +8,19 @@
 	<div>
 		<ul class="list-reset flex">
 			@auth
+				@impersonating
+					<li class="mr-4">
+						<a href="{{ route('admin.impersonate.destroy') }}" class="text-base no-underline text-grey-darker" onclick="event.preventDefault();document.getElementById('impersonating-form').submit();">{{ __('Stop Impersonate') }}</a>
+
+						<form id="impersonating-form" action="{{ route('admin.impersonate.destroy') }}" method="POST" style="display: none;">
+	                        @csrf
+	                    </form>
+					</li>
+				@else
+					<li class="mr-4">
+						<a href="{{ route('admin.impersonate.index') }}" class="text-base no-underline text-grey-darker">{{ __('Impersonate') }}</a>
+					</li>
+				@endimpersonating
 				<li class="flex items-center cursor-pointer text-grey-darker mr-4">
 					<svg class="w-4 h-4 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5 5a5 5 0 0 1 10 0v2A5 5 0 0 1 5 7V5zM0 16.68A19.9 19.9 0 0 1 10 14c3.64 0 7.06.97 10 2.68V20H0v-3.32z"/></svg>
 					<p class="text-base">{{ Auth::user()->name }}</p>

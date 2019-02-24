@@ -44,7 +44,7 @@
 
                     <div class="mb-8">
                         <div class="md:flex md:items-center mb-6">
-                            <label class="md:w-2/3 block text-grey font-bold">
+                            <label class="md:w-2/3 block text-grey font-bold cursor-pointer">
                                 <input type="checkbox" name="remember" class="mr-2 leading-tight" {{ old('remember') ? 'checked' : '' }}>
                                 <span class="uppercase tracking-wide text-grey-darker text-xs font-bold">
                                     {{ __('Remember Me') }}

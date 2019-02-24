@@ -17,7 +17,7 @@ Route::post('/login/twofactor', 'Auth\TwoFactorLoginController@verify')->name('l
 
 Auth::routes(['verify' => true]);
 
-Route::middleware('verified')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     // Dashboard
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
 
@@ -42,5 +42,11 @@ Route::middleware('verified')->group(function () {
         Route::post('/twoFactor', 'TwoFactorController@store')->name('twoFactor.store');
         Route::post('/twoFactor/verify', 'TwoFactorController@verify')->name('twoFactor.verify');
         Route::delete('/twoFactor', 'TwoFactorController@destroy')->name('twoFactor.destroy');
+    });
+
+    Route::middleware('admin')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
+    	Route::get('/impersonate', 'ImpersonateController@index')->name('impersonate.index');
+    	Route::post('/impersonate', 'ImpersonateController@store')->name('impersonate.store');
+    	Route::delete('/impersonate', 'ImpersonateController@destroy')->name('impersonate.destroy');
     });
 });
