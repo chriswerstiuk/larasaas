@@ -1,8 +1,5 @@
-# 
 <p align="center">
-    <a href="https://www.github.com/shuvroroy/saas-boilerplate" target="_blank">
-        # Laravel Saas Boilerplate
-    </a>
+    <h1>Laravel Saas Boilerplate</h1>
 </p>
 
 
