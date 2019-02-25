@@ -2,13 +2,6 @@
     <h1>Laravel Saas Boilerplate</h1>
 </p>
 
-
-
-## About
-LARASAAS is a saas system using Laravel,
-
-<br>
-
 ## Features
 
 - Login
