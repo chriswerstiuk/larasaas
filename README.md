@@ -1,5 +1,5 @@
 <p align="center">
-    <h1>Laravel Saas Boilerplate</h1>
+    <h1>Laravel Saas Boilerplate (WIP)</h1>
 </p>
 
 ## Features
